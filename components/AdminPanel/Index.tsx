@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Input } from "@/components/AdminPanel/Input";
-import Menubar from "@/components/Editor/Menubar";
 import Dropdown from "./Dropdown";
 import QuillEditor from "@/components/Editor/QuillEditor";
 
