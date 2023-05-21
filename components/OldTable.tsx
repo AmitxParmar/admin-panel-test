@@ -49,7 +49,7 @@ const Table = (
             </thead> */}
             <tbody className="text-emphasis max-w-full border-muted text-sm font-light">
                 {data.map(({ company, designation, experience }, index) => (
-                    <tr key={index} className="font-medium  ">
+                    <tr key={index} className="font-medium">
                         <td className="border-y py-3 px-6 text-center  whitespace-nowrap">
                             {index}
                         </td>
