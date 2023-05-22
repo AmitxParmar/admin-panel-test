@@ -8,13 +8,13 @@ import Image from "next/image";
 
 
 const AdminPanel = () => {
-    
-    const handleSubmit= ()=>{
+
+    const handleSubmit = () => {
         console.log("submitted successfully")
     }
 
     return (
-        <form className="m-auto border w-[950px] bg-white drop-shadow-lg min-h-full p-7 rounded-md border-[#ccc]" onSubmit={()=>handleSubmit()}>
+        <form className="m-auto border w-[950px] bg-white drop-shadow-lg min-h-full p-7 rounded-md border-[#ccc]" onSubmit={() => handleSubmit()}>
 
             <div className="grid grid-cols-2 w-full h-[150px]">
                 <div className="grid grid-row-3 max-h-56 gap-0 mr-4 relative">
@@ -24,8 +24,6 @@ const AdminPanel = () => {
                 </div>
                 <div className="h-auto border-b border-[#ccc] mb-4 overflow-hidden">
                     <QuillEditor />
-                    {/* <TipTapEditor placeholder="placeholder" /> */}
-                    {/* <Menubar placeholder="Tags" /> */}
                 </div>
             </div>
 
@@ -33,8 +31,6 @@ const AdminPanel = () => {
             <div className="h-[350px] justify-between relative grid grid-flow-col mt-1">
                 <div className="h-auto w-[750px] border-b border-[#ccc] mb-4 overflow-hidden">
                     <QuillEditor />
-                    {/* <TipTapEditor placeholder="placeholder" /> */}
-                    {/* <Menubar placeholder="Tags" /> */}
                 </div>
 
                 <div className="relative flex flex-col items-center justify-center w-fit">
@@ -46,11 +42,9 @@ const AdminPanel = () => {
                             alt="upload profile"
                         />
                     </div>
-                    <Input placeholder="Logo URL" className="placeholder:text-gray-400 w-[120px] h-9 my-2" />
-
-                    {/* <label htmlFor="">No. of E</label> */}
-                    <Input className="text-sm placeholder:text-gray-400 w-[120px] max-w-[120px] h-9 my-2" placeholder="No of M" />
+                    <Input className="text-sm placeholder:text-gray-400 w-[120px] max-w-[120px] h-9 my-2" placeholder="Logo URL" />
                     <Input className="text-sm placeholder:text-gray-400 w-[120px] max-w-[120px] h-9 my-2" placeholder="Funding" />
+                    <Input className="text-sm placeholder:text-gray-400 w-[120px] max-w-[120px] h-9 my-2" placeholder="No of M" />
                     <Dropdown
                         className="w-[120px] min-w-[120px] h-9 my-2"
                         placeholder="No. of E"
