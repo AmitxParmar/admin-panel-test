@@ -30,14 +30,14 @@ const AdminPanel = () => {
             </div>
 
             {/* Removed the checkbox for now */}
-            <div className="h-[350px] relative grid grid-flow-col mt-1">
+            <div className="h-[350px] justify-between relative grid grid-flow-col mt-1">
                 <div className="h-auto w-[750px] border-b border-[#ccc] mb-4 overflow-hidden">
                     <QuillEditor />
                     {/* <TipTapEditor placeholder="placeholder" /> */}
                     {/* <Menubar placeholder="Tags" /> */}
                 </div>
 
-                <div className="relative flex flex-col items-center ">
+                <div className="relative flex flex-col items-center justify-center w-fit">
                     <div className="h-[90px] mb-5 text-white rounded-full w-[90px] bg-black overflow-hidden border border-[#ccc] shadow-sm">
                         <Image
                             src={"https://www.gravatar.com/avatar/fallback?s=160&d=mp&r=PG"}
