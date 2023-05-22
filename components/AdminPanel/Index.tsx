@@ -3,88 +3,62 @@ import React from "react";
 import { Input } from "@/components/AdminPanel/Input";
 import Dropdown from "./Dropdown";
 import QuillEditor from "@/components/Editor/QuillEditor";
+import { Button } from "./Button";
+import Image from "next/image";
 
 
 const AdminPanel = () => {
+    
+    const handleSubmit= ()=>{
+        console.log("submitted successfully")
+    }
 
     return (
-        <>
-            <div className="max-w-[950px] min-w-[950px] ">
-                <form className="border rounded-md border-emphasis">
-                    <div className="grid p-6 grid-cols-2 gap-0">
-                        <div className="grid grid-row-3 relative">
-                            <div className="w-full h-9 mb-1">
-                                <Input className="max-w-[350px]" type="text" placeholder="Company Name" />
-                            </div>
-                            <div className="w-full h-9 mb-1">
-                                <Input className="min-w-max max-w-[350px]" type="text" placeholder="Tagline" />
-                            </div>
-                            <div className="w-full h-9 mb-1">
-                                <Input className="min-w-max max-w-[350px]" type="text" placeholder="Tags" />
-                            </div>
-                            {/* <div className="w-full h-[37px] m-3">
-                                <Input className=" max-w-[350px]" type="text" placeholder="Tagline" />
-                            </div>
-                            <div className="w-full h-[37px] m-3">
-                                <Input className="max-w-[350px]" type="text" placeholder="Tags" />
-                            </div> */}
-                        </div>
-                        <div className="relative w-full max-w-[550px] h-[190px] max-h-[190px]">
-                            <QuillEditor  />
-                            {/* <Menubar placeholder="Tags" /> */}
-                        </div>
-                    </div>
+        <form className="m-auto border w-[950px] bg-white drop-shadow-lg min-h-full p-7 rounded-md border-[#ccc]" onSubmit={()=>handleSubmit()}>
 
-                    {/* Removed the checkbox for now */}
-
-                    <div className="grid grid-flow-col mt-6">
-                        <div className="max-w-[750px] w-[750px] h-[400px] max-h-[400px] overflow-hidden scrollbar-thin m-2 my-auto ">
-                            {/* <Input className="min-" placeholder="Company Description" /> */}
-                            <QuillEditor />
-                            {/* <Menubar placeholder="Company Description" /> */}
-                        </div>
-                        <div className="flex flex-col items-center ">
-                            <div className="h-[90px] mb-5 text-white rounded-full w-[90px] bg-black">
-                                Logo URL
-                            </div>
-
-                            <div className="w-[120px] h-[37px] m-2">
-                                <Input placeholder="Logo URL" />
-                            </div>
-
-                            <div className="w-[120px] min-w-[120px] h-[37px] m-2">
-                                {/* <label htmlFor="">No. of E</label> */}
-                                <Dropdown
-                                    placeholder="No. of E"
-                                    options={["1-10", "11-25", "26-50", "51-100", "100+"]}
-                                />
-                            </div>
-                            <div className="w-[120px] h-[37px] m-2">
-                                <Input className="text-sm w-[120px] max-w-[120px]" placeholder="No of M" />
-                                {/* <DropDown text="No. of M"
-                                options={["1-10", "11-25", "26-50", "51-100", "100+"]} /> */}
-                            </div>
-                            <div className="w-[92px] min-w-[120px] h-[37px] m-2">
-                                <Input type="text" placeholder="Funding" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex">
-                        <div className="w-[320px] h-[340px] max-h-[340px] m-2">
-                            {/* <Menubar placeholder="About Company" /> */}
-                        </div>
-
-                        <div className="w-[550px] h-[340px] max-h-[340px] m-2">
-                            {/* <Menubar placeholder="description" /> */}
-                        </div>
-                    </div>
-
-                    <div className="flex justify-end w-[875px]">
-
-                    </div>
-                </form>
+            <div className="grid grid-cols-2 w-full h-[150px]">
+                <div className="grid grid-row-3 max-h-56 gap-0 mr-4 relative">
+                    <Input className="max-w-[350px] placeholder:text-gray-400 min-w-full w-full h-9 mb-1" type="text" placeholder="Company Name" />
+                    <Input className="max-w-[350px] placeholder:text-gray-400 min-w-full w-full h-9 mb-1" type="text" placeholder="Tagline" />
+                    <Input className="max-w-[350px] placeholder:text-gray-400 min-w-full w-full h-9 mb-1" type="text" placeholder="Tags" />
+                </div>
+                <div className="h-auto border-b border-[#ccc] mb-4 overflow-hidden">
+                    <QuillEditor />
+                    {/* <TipTapEditor placeholder="placeholder" /> */}
+                    {/* <Menubar placeholder="Tags" /> */}
+                </div>
             </div>
-        </>
+
+            {/* Removed the checkbox for now */}
+            <div className="h-[350px] relative grid grid-flow-col mt-1">
+                <div className="h-auto w-[750px] border-b border-[#ccc] mb-4 overflow-hidden">
+                    <QuillEditor />
+                    {/* <TipTapEditor placeholder="placeholder" /> */}
+                    {/* <Menubar placeholder="Tags" /> */}
+                </div>
+
+                <div className="relative flex flex-col items-center ">
+                    <div className="h-[90px] mb-5 text-white rounded-full w-[90px] bg-black overflow-hidden border border-[#ccc] shadow-sm">
+                        <Image
+                            src={"https://www.gravatar.com/avatar/fallback?s=160&d=mp&r=PG"}
+                            height={90}
+                            width={90}
+                            alt="upload profile"
+                        />
+                    </div>
+                    <Input placeholder="Logo URL" className="placeholder:text-gray-400 w-[120px] h-9 my-2" />
+
+                    {/* <label htmlFor="">No. of E</label> */}
+                    <Input className="text-sm placeholder:text-gray-400 w-[120px] max-w-[120px] h-9 my-2" placeholder="No of M" />
+                    <Input className="text-sm placeholder:text-gray-400 w-[120px] max-w-[120px] h-9 my-2" placeholder="Funding" />
+                    <Dropdown
+                        className="w-[120px] min-w-[120px] h-9 my-2"
+                        placeholder="No. of E"
+                        options={["1-10", "11-25", "26-50", "51-100", "100+"]} />
+                </div>
+            </div>
+            <Button className="w-full mt-5">Save</Button>
+        </form>
     );
 };
 

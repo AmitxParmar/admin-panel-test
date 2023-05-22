@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import 'react-quill/dist/quill.snow.css'
 import dynamic from 'next/dynamic'
 
@@ -10,7 +10,7 @@ const QuillNoSSRWrapper = dynamic(import('react-quill'), {
 })
 const modules = {
     toolbar: [
-        [{ header: '1' }, { header: '2' }, { font: [] }],
+        [{ header: '1' }, { header: '2' }, { font: ["var(--font-inter)"] }],
         [{ size: [] }],
         ['bold', 'italic', 'underline', 'strike', 'blockquote'],
         [
@@ -48,9 +48,11 @@ const formats = [
     'video',
 ]
 
-function QuillEditor({ }: Props) {
+function QuillEditor() {
     return (
-        <QuillNoSSRWrapper formats={formats} className='max-h-full overflow-auto'/>
+        
+            <QuillNoSSRWrapper formats={formats} style={{minHeight:"fit"}} className='max-w-full max-h-full h-full' />
+        
     )
 }
 

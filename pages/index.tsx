@@ -1,15 +1,19 @@
-import Image from 'next/image'
+'use-client'
+
 import { Inter } from 'next/font/google'
-import DropdownMenu from '@/components/AdminPanel/Dropdown'
-import AdminPanel from '@/components/AdminPanel/Index'
+import dynamic from 'next/dynamic'
+
+
 const inter = Inter({ subsets: ['latin'] })
+
+import AdminPanel from '@/components/AdminPanel'
 
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className={`m-auto`}
     >
-      <AdminPanel/>
+      <AdminPanel />
     </main>
   )
 }
