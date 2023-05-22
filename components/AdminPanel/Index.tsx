@@ -6,8 +6,7 @@ import QuillEditor from "@/components/Editor/QuillEditor";
 import { Button } from "./Button";
 import Image from "next/image";
 
-
-const AdminPanel = () => {
+const AdminPanel:React.FC = () => {
 
     const handleSubmit = () => {
         console.log("submitted successfully")
@@ -15,7 +14,6 @@ const AdminPanel = () => {
 
     return (
         <form className="m-auto border w-[950px] bg-white drop-shadow-lg min-h-full p-7 rounded-md border-[#ccc]" onSubmit={() => handleSubmit()}>
-
             <div className="grid grid-cols-2 w-full h-[150px]">
                 <div className="grid grid-row-3 max-h-56 gap-0 mr-4 relative">
                     <Input className="max-w-[350px] placeholder:text-gray-400 min-w-full w-full h-9 mb-1" type="text" placeholder="Company Name" />
