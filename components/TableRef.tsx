@@ -15,7 +15,7 @@ type Props = {
 const TableRef = (props: Props) => {
   const numColumns = props.data.length;
   return (
-    <div className={`w-full ${inter.className}`}>
+    <div className={`w-full font-inter`}>
       <div className="bg-white text-emphasis shadow-md rounded my-6 font-medium">
         <div className="table-responsive">
           <table className="table-auto w-full font-fr">

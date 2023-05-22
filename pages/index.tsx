@@ -1,5 +1,5 @@
-import { Inter } from 'next/font/google'
-import AdminPanel from '@/components/AdminPanel'
+import dynamic from 'next/dynamic'
+const AdminPanel = dynamic(() => import("@/components/AdminPanel"))
 
 export default function Home() {
   return (

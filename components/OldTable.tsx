@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import { FaBriefcase, FaBuilding, FaAward } from 'react-icons/fa'
 
 const Table = (
     { headings, data }: {
