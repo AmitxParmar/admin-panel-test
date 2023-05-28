@@ -1,9 +1,10 @@
 import dynamic from 'next/dynamic'
-const AdminPanel = dynamic(() => import("@/components/AdminPanel"))
+
+import AdminPanel from '@/components/AdminPanel/_index'
 
 export default function Home() {
   return (
-    <main className={`m-auto min-screeen min-w-screen`}>
+    <main className={`m-auto min-h-screen min-w-screen`}>
       <AdminPanel />
     </main>
   )
